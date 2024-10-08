@@ -1,3 +1,21 @@
+## How to build
+1) Docker image using cuda:
+
+    Prerequisite: 
+      - Docker has been installed (should be installed from [the official document](https://docs.docker.com/engine/install/ubuntu/) to avoid unwanted errors with nvidia)
+      - Nvidia driver and [nvidia container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) must be installed. You can have a look at `vm-setup.sh` to install yourself necessary package.
+
+    Then you can build your cuda docker image with the following command:
+   
+    ```DOCKER_BUILDKIT=0 docker build -f cuda.Dockerfile -t evilsocket-cake:cuda .```
+    
+    Or you can try to pull the image on my Dockerhub (not fully tested): https://hub.docker.com/repository/docker/vinhtranthai/evilsocket-cake/general
+    
+3) Run on VM using cuda:
+   
+   You can try to run my following set up script in `vm-setup.sh` to install rust, nvidia driver, nvidia container toolkit and requisite package. (This script is only able to work on Ubuntu currently)
+
+##
 <p align="center">
   <small>Join the project community on our server!</small>
   <br/><br/>
